@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta name="generator" content="Hugo 0.107.0">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>My New Hugo Site</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="My New Hugo Site" />
+<meta property="og:description" content="This is my cool site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://huangzhifeng1.github.io/" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My New Hugo Site"/>
+<meta name="twitter:description" content="This is my cool site"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://huangzhifeng1.github.io/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="My New Hugo Site">
+    <link rel="feed" href="/index.xml" type="application/rss+xml" title="My New Hugo Site"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "https:\/\/huangzhifeng1.github.io\/","inLanguage": "en","author": {
+                "@type": "Person",
+                "name": "李捷禧"
+            },"description": "This is my cool site","name": "My New Hugo Site"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My New Hugo Site">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My New Hugo Site">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page home" data-home="posts"><div class="home-profile"><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/docker%CA%BC%C7%A3/">Docker笔记（李捷禧）</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>李捷禧</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-12-08">2022-12-08</time></span></div><div class="content">Docker简介 Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。
+Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。
+容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。
+Docker安装 1.1.卸载（可选） 如果之前安装过旧版本的Docker，可以使用下面命令卸载：
+yum remove docker \docker-client \docker-client-latest \docker-common \docker-latest \docker-latest-logrotate \docker-logrotate \docker-selinux \docker-engine-selinux \docker-engine \docker-ce 1.2.安装docker 首先需要大家虚拟机联网，安装yum工具
+yum install -y yum-utils \device-mapper-persistent-data \lvm2 --skip-broken 然后更新本地镜像源：
+设置docker镜像源
+yum-config-manager \--add-repo \https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.reposed -i &#39;s/download.docker.com/mirrors.aliyun.com\/docker-ce/g&#39; /etc/yum.repos.d/docker-ce.repoyum makecache fast 然后输入命令：
+yum install -y docker-ce docker-ce为社区免费版本。稍等片刻，docker即可安装成功。</div><div class="post-footer">
+        <a href="/posts/docker%CA%BC%C7%A3/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/hugo%CA%BC%C7%A3/">hugo笔记（李捷禧）</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>李捷禧</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-12-08">2022-12-08</time></span></div><div class="content">hugo简介 hugo是一个通用网站框架，从技术上来说，Hugo是一个静态站点生成器。也就是说，不像WordPress，Ghost和Drupal之类的系统，会奢侈地为每一次访问都生成一次新页面，在你创造出内容时Hugo就已经把页面建好了。由于站点被访问的次数远远大于被编辑的次数，Hugo优化了网站访问的同时，提供了优异的写作体验。
+使用Hugo建站极其快速且非常安全。Hugo站点可以部署在任何地方，包括Heroku、GoDaddy、DreamHost、GitHub Pages、Google Cloud Storage、Amazon S3和CloudFront，也能在CDN群上工作的很好。Hugo站点的运行不依赖昂贵的运行环境，如Ruby、Python或者PHP，也不依赖任何数据库。
+我们想让Hugo作为网站的创建工具。近乎秒建的速度，能够随时重新生成被修改的地方，Hugo为此提供了一个非常快的反馈环路。此反馈环路当你设计网站时非常简便，而当创建内容时也非常实用。
+hugo安装 Hugo 主题 推荐我正在用的 maupassant，非常简洁，美观。
+配置方法：
+cd bloggit submodule add https://github.com/skydamon/maupassant-hugo.git themes/maupassant 在config.toml将theme改为 theme = “maupassant” 即可
+将Github和Hugo结合起来 在githu上新建一个空的仓库用来放置Hugo，下面假设你建立的Hugo仓库为blog（和Hugo主目录同名） 然后在本地执行（后面的是新仓库的地址）
+git remote add origin git@github.com:xiaoming/blog.gitcd blog #这个是前面配置的Hugo的主目录git push -u origin master 使用hugo -t=ananke -D 来编译你的博客，生成静态网页文件。-D表示草稿也编译
+执行完毕后，你会发现你的博客目录下多了一个public，实际上直接将这个public的内容上传到你的githu pages仓库里，再次访问你的github pages就可以看到hugo生成的网页内容了。
+但是每次要这样手动copy显然太麻烦了，推荐将github pages的仓库设置为博客仓库的submodule
+git submodule add git@github.com:skydamon/xiaoming.github.io.git #githubPages仓库地址hugo -t=ananke -d xiaoming.github.io #子目录名称，-d表示编译文件的存放目录 然后就是git的操作了，这里不再赘述（建议写一个脚本，完成自动部署，不然每次提交还是挺麻烦的）
+评论系统 使用utterance
+在config.toml中加入下面的代码即可。（主题需要使用skydamon/maupassant才能支持label)
+[params.utteranc]enable = truerepo = &#34;skydamon/xiaoming.</div><div class="post-footer">
+        <a href="/posts/hugo%CA%BC%C7%A3/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/git%CA%BC%C7%A3/">Git笔记（李捷禧）</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>李捷禧</a></span>&nbsp;<span class="post-publish">published on <time datetime="0001-01-01">0001-01-01</time></span></div><div class="content">Git简介 Git是目前世界上最先进的分布式版本控制系统，在处理各种项目时都十分高效，而且非常的高大上。
+SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而干活的时候，用的都是自己的电脑，所以首先要从中央服务器哪里得到最新的版本，然后干活，干完后，需要把自己做完的活推送到中央服务器。而且集中式版本控制系统是必须联网才能工作。
+Git是分布式版本控制系统，它就没有中央服务器的，每个人的电脑就是一个完整的版本库，这样，工作的时候就不需要联网了，因为版本都是在自己的电脑上。
+安装Git 1、卸载旧版本 git
+yum remove git 2、进入 Github 中的 git 版本页面 ，或者在镜像站，自行选择版本下载，我这里下载的是 git-2.30.2.tar.gz
+3、将本地的安装包上传到 linux 服务器上，我这里放在 /home/software 目录下
+4、解压压缩包，得到目录 git-2.30.2，位置在 /home/software/git-2.30.2
+tar -zxvf git-2.30.2.tar.gz 5、提前安装可能需要的依赖
+yum install curl-devel expat-devel openssl-devel zlib-devel gcc-c++ yum install perl-ExtUtils-MakeMaker automake autoconf libtool make 6、编译安装 Git
+进入到 git-2.30.2 目录，执行编译安装等命令
+cd git-2.30.2 make configure ./configure --prefix=/usr/local/git make profix=/usr/local/git make install 7、将 git 加入环境变量中，修改 /etc/profile 文件，在 profile 文件末尾追加配置内容
+编辑配置文件
+vim /etc/profile 末尾追加
+export GIT_HOME=/usr/local/git export PATH=$PATH:$GIT_HOME/bin 8、刷新 profile 配置文件</div><div class="post-footer">
+        <a href="/posts/git%CA%BC%C7%A3/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/linux%CA%BC%C7%A3/">Linux笔记（李捷禧）</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>李捷禧</a></span>&nbsp;<span class="post-publish">published on <time datetime="0001-01-01">0001-01-01</time></span></div><div class="content">1、vi 和 vim编辑器 1.1、简介 所有的Linux系统都会内建vi文本编辑器。
+vim具有程序编辑的能力，可以看做是vi的增强版本，可以主动的以字体颜色辨别语法的正确性，方便程序设计。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。
+1.2、vi和vim常用的三种模式 1.2.1、正常模式 以vim打开一个档案就直接进入一般模式了（这是默认的模式）。在这个模式种，你可以使用【上下左右】按键移动光标，你可以使用【删除字符】或【删除整行】来处理档案内容，也可以使用【复制、贴上】来处理你的文件数据。（在正常模式下，我们可以使用快捷键。）
+1.2.2、插入模式/编辑模式 在这个模式下，程序员可以输入内容。
+按下【i,I,o,O,a,A,r,R】等任何一个字母之后才会进入编辑模式，一般来说按i即可。
+1.2.3、命令行模式 在这个模式种，可以提供你相关指令，完成读取、存盘、替换、离开vim、显示行号等的动作则是在此模式中达成的。
+1.2.4、在vi和vim模式下的命令
+i	#进入输入模式a	#进入输入模式 光标前进一位ESC	#退出输入模式wq	#保存并退出q	#退出q!	#强制退出 1.3、vi和vim快捷键 1.3.1、复制
+#复制yy(正常模式)	#拷贝当前行 p(正常模式)	#粘贴5yy(正常模式)	#拷贝当前行向下5行 1.3.2、删除
+#删除dd(正常模式)	#删除一行5dd(正常模式)	#删除当前行向下的5行 1.3.3、查找
+#查找/hello + 回车(正常模式) #查找关键字hellon(正常模式)	#查找下一个 1.3.4、行号
+**#文件的行号****:set nu(命令模式)	#设置行号****:set nonu(命令模式)	#取消行号** 1.3.5、行首/行末
+#跳转到最末行G(正常模式)#跳转到最首行gg(正常模式) 1.3.6、撤销
+#撤销u(正常模式) 1.3.7、将光标移到第n行
+#将光标移到第10行#1、显示行号 :set nu (命令模式)#2、输入10	（正常模式）#3、输入shift+g	（正常模式） 1.</div><div class="post-footer">
+        <a href="/posts/linux%CA%BC%C7%A3/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/nginx%CA%BC%C7%A3/">nginx笔记（李捷禧）</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>李捷禧</a></span>&nbsp;<span class="post-publish">published on <time datetime="0001-01-01">0001-01-01</time></span></div><div class="content">nginx简介 Nginx (“engine x”) 是一个高性能的 HTTP 和反向代理服务器，特点是占有内存少，并发能力强，事实上 Nginx 的并发能力确实在同类型的网页服务器中表现较好，中国大陆使用 Nginx 网站用户有：百度、京东、新浪、网易、腾讯、淘宝等
+安装配置nginx 下载包
+wgte https://nginx.org/download/nginx-1.21.6.tar.gz 解压
+tar xvf nginx-1.21.6.tar.gzcd nginx-1.21.6 配置（带有https模块）
+./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module 编译和安装
+编译：make安装：make install 查看安装路径
+whereis nginx 设置开机启动 编辑服务文件
+vim /lib/systemd/system/nginx.service[Unit]Description=nginx serviceAfter=network.target[Service]Type=forkingExecStart=/usr/local/nginx/sbin/nginxExecReload=/usr/local/nginx/sbin/nginx -s reloadExecStop=/usr/local/nginx/sbin/nginx -s stopPrivateTmp=true[Install]WantedBy=multi-user.target说明：Description:描述服务After:描述服务类别[Service]服务运行参数的设置Type=forking是后台运行的形式ExecStart为服务的具体运行命令ExecReload为重启命令ExecStop为停止命令PrivateTmp=True表示给服务分配独立的临时空间注意：[Service]的启动、重启、停止命令全部要求使用绝对路径[Install]运行级别下服务安装的相关设置，可设置为多用户，即系统运行级别为3 保存退出
+加入开机自启动
+systemctl enable nginx.service 取消开机自启动</div><div class="post-footer">
+        <a href="/posts/nginx%CA%BC%C7%A3/">Read More</a></div>
+</article></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.107.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">李捷禧</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"data":{"id-1":"This is my cool site"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

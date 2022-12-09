@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Git笔记（李捷禧） - My New Hugo Site</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Git笔记（李捷禧）" />
+<meta property="og:description" content="Git简介 Git是目前世界上最先进的分布式版本控制系统，在处理各种项目时都十分高效，而且非常的高大上。
+SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而干活的时候，用的都是自己的电脑，所以首先要从中央服务器哪里得到最新的版本，然后干活，干完后，需要把自己做完的活推送到中央服务器。而且集中式版本控制系统是必须联网才能工作。
+Git是分布式版本控制系统，它就没有中央服务器的，每个人的电脑就是一个完整的版本库，这样，工作的时候就不需要联网了，因为版本都是在自己的电脑上。
+安装Git 1、卸载旧版本 git
+yum remove git 2、进入 Github 中的 git 版本页面 ，或者在镜像站，自行选择版本下载，我这里下载的是 git-2.30.2.tar.gz
+3、将本地的安装包上传到 linux 服务器上，我这里放在 /home/software 目录下
+4、解压压缩包，得到目录 git-2.30.2，位置在 /home/software/git-2.30.2
+tar -zxvf git-2.30.2.tar.gz 5、提前安装可能需要的依赖
+yum install curl-devel expat-devel openssl-devel zlib-devel gcc-c&#43;&#43; yum install perl-ExtUtils-MakeMaker automake autoconf libtool make 6、编译安装 Git
+进入到 git-2.30.2 目录，执行编译安装等命令
+cd git-2.30.2 make configure ./configure --prefix=/usr/local/git make profix=/usr/local/git make install 7、将 git 加入环境变量中，修改 /etc/profile 文件，在 profile 文件末尾追加配置内容
+编辑配置文件
+vim /etc/profile 末尾追加
+export GIT_HOME=/usr/local/git export PATH=$PATH:$GIT_HOME/bin 8、刷新 profile 配置文件" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://huangzhifeng1.github.io/posts/git%CA%BC%C7%A3/" /><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git笔记（李捷禧）"/>
+<meta name="twitter:description" content="Git简介 Git是目前世界上最先进的分布式版本控制系统，在处理各种项目时都十分高效，而且非常的高大上。
+SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而干活的时候，用的都是自己的电脑，所以首先要从中央服务器哪里得到最新的版本，然后干活，干完后，需要把自己做完的活推送到中央服务器。而且集中式版本控制系统是必须联网才能工作。
+Git是分布式版本控制系统，它就没有中央服务器的，每个人的电脑就是一个完整的版本库，这样，工作的时候就不需要联网了，因为版本都是在自己的电脑上。
+安装Git 1、卸载旧版本 git
+yum remove git 2、进入 Github 中的 git 版本页面 ，或者在镜像站，自行选择版本下载，我这里下载的是 git-2.30.2.tar.gz
+3、将本地的安装包上传到 linux 服务器上，我这里放在 /home/software 目录下
+4、解压压缩包，得到目录 git-2.30.2，位置在 /home/software/git-2.30.2
+tar -zxvf git-2.30.2.tar.gz 5、提前安装可能需要的依赖
+yum install curl-devel expat-devel openssl-devel zlib-devel gcc-c&#43;&#43; yum install perl-ExtUtils-MakeMaker automake autoconf libtool make 6、编译安装 Git
+进入到 git-2.30.2 目录，执行编译安装等命令
+cd git-2.30.2 make configure ./configure --prefix=/usr/local/git make profix=/usr/local/git make install 7、将 git 加入环境变量中，修改 /etc/profile 文件，在 profile 文件末尾追加配置内容
+编辑配置文件
+vim /etc/profile 末尾追加
+export GIT_HOME=/usr/local/git export PATH=$PATH:$GIT_HOME/bin 8、刷新 profile 配置文件"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://huangzhifeng1.github.io/posts/git%CA%BC%C7%A3/" /><link rel="prev" href="https://huangzhifeng1.github.io/posts/linux%CA%BC%C7%A3/" /><link rel="next" href="https://huangzhifeng1.github.io/posts/hugo%CA%BC%C7%A3/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Git笔记（李捷禧）",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/huangzhifeng1.github.io\/posts\/git%CA%BC%C7%A3\/"
+        },"genre": "posts","wordcount":  89 ,
+        "url": "https:\/\/huangzhifeng1.github.io\/posts\/git%CA%BC%C7%A3\/","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "李捷禧"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My New Hugo Site">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My New Hugo Site">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git笔记（李捷禧）</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>李捷禧</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;89 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#git简介">Git简介</a></li>
+    <li><a href="#安装git">安装Git</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="git简介">Git简介</h2>
+<p>Git是目前世界上最先进的分布式版本控制系统，在处理各种项目时都十分高效，而且非常的高大上。</p>
+<p>SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而干活的时候，用的都是自己的电脑，所以首先要从中央服务器哪里得到最新的版本，然后干活，干完后，需要把自己做完的活推送到中央服务器。而且集中式版本控制系统是必须联网才能工作。</p>
+<p>Git是分布式版本控制系统，它就没有中央服务器的，每个人的电脑就是一个完整的版本库，这样，工作的时候就不需要联网了，因为版本都是在自己的电脑上。</p>
+<h2 id="安装git">安装Git</h2>
+<p>1、卸载旧版本 git</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="n">yum</span> <span class="n">remove</span> <span class="n">git</span>
+</span></span></code></pre></div><p>2、进入 Github 中的 <a href="https://github.com/git/git/releases" target="_blank" rel="noopener noreffer ">git 版本页面</a> ，或者在<a href="https://mirrors.edge.kernel.org/pub/software/scm/git/" target="_blank" rel="noopener noreffer ">镜像站</a>，自行选择版本下载，我这里下载的是 <a href="https://codeload.github.com/git/git/tar.gz/refs/tags/v2.30.2" target="_blank" rel="noopener noreffer ">git-2.30.2.tar.gz</a></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/img_convert/975c1516e743ddcc04661ffd08756926.png"
+        data-srcset="https://img-blog.csdnimg.cn/img_convert/975c1516e743ddcc04661ffd08756926.png, https://img-blog.csdnimg.cn/img_convert/975c1516e743ddcc04661ffd08756926.png 1.5x, https://img-blog.csdnimg.cn/img_convert/975c1516e743ddcc04661ffd08756926.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/img_convert/975c1516e743ddcc04661ffd08756926.png"
+        title="img" /></p>
+<p>3、将本地的安装包上传到 linux 服务器上，我这里放在 /home/software 目录下</p>
+<p>4、解压压缩包，得到目录 git-2.30.2，位置在 /home/software/git-2.30.2</p>
+<pre tabindex="0"><code class="language-undefined" data-lang="undefined">tar -zxvf git-2.30.2.tar.gz
+</code></pre><p>5、提前安装可能需要的依赖</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">yum</span> <span class="n">install</span> <span class="n">curl</span><span class="o">-</span><span class="n">devel</span> <span class="n">expat</span><span class="o">-</span><span class="n">devel</span> <span class="n">openssl</span><span class="o">-</span><span class="n">devel</span> <span class="n">zlib</span><span class="o">-</span><span class="n">devel</span> <span class="n">gcc</span><span class="o">-</span><span class="n">c</span><span class="o">++</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">yum</span> <span class="n">install</span> <span class="n">perl</span><span class="o">-</span><span class="n">ExtUtils</span><span class="o">-</span><span class="n">MakeMaker</span> <span class="n">automake</span> <span class="n">autoconf</span> <span class="n">libtool</span> <span class="n">make</span>
+</span></span></code></pre></div><p>6、编译安装 Git</p>
+<p>进入到 git-2.30.2 目录，执行编译安装等命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="nx">cd</span> <span class="nx">git</span><span class="o">-</span><span class="mf">2.30</span><span class="p">.</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">make</span> <span class="nx">configure</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="o">/</span><span class="nx">configure</span> <span class="o">--</span><span class="nx">prefix</span><span class="o">=</span><span class="err">/usr/local/git</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">make</span> <span class="nx">profix</span><span class="o">=</span><span class="err">/usr/local/git</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">make</span> <span class="nx">install</span>
+</span></span></code></pre></div><p>7、将 git 加入环境变量中，修改 /etc/profile 文件，在 profile 文件末尾追加配置内容</p>
+<p>编辑配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/profile
+</span></span></code></pre></div><p>末尾追加</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">GIT_HOME</span><span class="o">=</span>/usr/local/git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$GIT_HOME</span>/bin
+</span></span></code></pre></div><p>8、刷新 profile 配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> /etc/profile
+</span></span></code></pre></div><p>9、查看是否配置成功</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="err">复制复制</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span><span class="n">root</span><span class="vi">@xxx</span> <span class="n">git</span><span class="o">-</span><span class="mf">2.30</span><span class="o">.</span><span class="mi">2</span><span class="o">]</span><span class="c1"># git --version</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">version</span> <span class="mf">2.30</span><span class="o">.</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 配置成功！</span>
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 0001-01-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://huangzhifeng1.github.io/posts/git%CA%BC%C7%A3/" data-title="Git笔记（李捷禧）"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://huangzhifeng1.github.io/posts/git%CA%BC%C7%A3/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://huangzhifeng1.github.io/posts/git%CA%BC%C7%A3/" data-title="Git笔记（李捷禧）"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://huangzhifeng1.github.io/posts/git%CA%BC%C7%A3/" data-title="Git笔记（李捷禧）"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://huangzhifeng1.github.io/posts/git%CA%BC%C7%A3/" data-title="Git笔记（李捷禧）"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/linux%CA%BC%C7%A3/" class="prev" rel="prev" title="Linux笔记（李捷禧）"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Linux笔记（李捷禧）</a>
+            <a href="/posts/hugo%CA%BC%C7%A3/" class="next" rel="next" title="hugo笔记（李捷禧）">hugo笔记（李捷禧）<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.107.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">李捷禧</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

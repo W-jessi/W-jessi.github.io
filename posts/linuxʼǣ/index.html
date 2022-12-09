@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Linux笔记（李捷禧） - My New Hugo Site</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Linux笔记（李捷禧）" />
+<meta property="og:description" content="1、vi 和 vim编辑器 1.1、简介 所有的Linux系统都会内建vi文本编辑器。
+vim具有程序编辑的能力，可以看做是vi的增强版本，可以主动的以字体颜色辨别语法的正确性，方便程序设计。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。
+1.2、vi和vim常用的三种模式 1.2.1、正常模式 以vim打开一个档案就直接进入一般模式了（这是默认的模式）。在这个模式种，你可以使用【上下左右】按键移动光标，你可以使用【删除字符】或【删除整行】来处理档案内容，也可以使用【复制、贴上】来处理你的文件数据。（在正常模式下，我们可以使用快捷键。）
+1.2.2、插入模式/编辑模式 在这个模式下，程序员可以输入内容。
+按下【i,I,o,O,a,A,r,R】等任何一个字母之后才会进入编辑模式，一般来说按i即可。
+1.2.3、命令行模式 在这个模式种，可以提供你相关指令，完成读取、存盘、替换、离开vim、显示行号等的动作则是在此模式中达成的。
+1.2.4、在vi和vim模式下的命令
+i	#进入输入模式a	#进入输入模式 光标前进一位ESC	#退出输入模式wq	#保存并退出q	#退出q!	#强制退出 1.3、vi和vim快捷键 1.3.1、复制
+#复制yy(正常模式)	#拷贝当前行 p(正常模式)	#粘贴5yy(正常模式)	#拷贝当前行向下5行 1.3.2、删除
+#删除dd(正常模式)	#删除一行5dd(正常模式)	#删除当前行向下的5行 1.3.3、查找
+#查找/hello &#43; 回车(正常模式) #查找关键字hellon(正常模式)	#查找下一个 1.3.4、行号
+**#文件的行号****:set nu(命令模式)	#设置行号****:set nonu(命令模式)	#取消行号** 1.3.5、行首/行末
+#跳转到最末行G(正常模式)#跳转到最首行gg(正常模式) 1.3.6、撤销
+#撤销u(正常模式) 1.3.7、将光标移到第n行
+#将光标移到第10行#1、显示行号 :set nu (命令模式)#2、输入10	（正常模式）#3、输入shift&#43;g	（正常模式） 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://huangzhifeng1.github.io/posts/linux%CA%BC%C7%A3/" /><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux笔记（李捷禧）"/>
+<meta name="twitter:description" content="1、vi 和 vim编辑器 1.1、简介 所有的Linux系统都会内建vi文本编辑器。
+vim具有程序编辑的能力，可以看做是vi的增强版本，可以主动的以字体颜色辨别语法的正确性，方便程序设计。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。
+1.2、vi和vim常用的三种模式 1.2.1、正常模式 以vim打开一个档案就直接进入一般模式了（这是默认的模式）。在这个模式种，你可以使用【上下左右】按键移动光标，你可以使用【删除字符】或【删除整行】来处理档案内容，也可以使用【复制、贴上】来处理你的文件数据。（在正常模式下，我们可以使用快捷键。）
+1.2.2、插入模式/编辑模式 在这个模式下，程序员可以输入内容。
+按下【i,I,o,O,a,A,r,R】等任何一个字母之后才会进入编辑模式，一般来说按i即可。
+1.2.3、命令行模式 在这个模式种，可以提供你相关指令，完成读取、存盘、替换、离开vim、显示行号等的动作则是在此模式中达成的。
+1.2.4、在vi和vim模式下的命令
+i	#进入输入模式a	#进入输入模式 光标前进一位ESC	#退出输入模式wq	#保存并退出q	#退出q!	#强制退出 1.3、vi和vim快捷键 1.3.1、复制
+#复制yy(正常模式)	#拷贝当前行 p(正常模式)	#粘贴5yy(正常模式)	#拷贝当前行向下5行 1.3.2、删除
+#删除dd(正常模式)	#删除一行5dd(正常模式)	#删除当前行向下的5行 1.3.3、查找
+#查找/hello &#43; 回车(正常模式) #查找关键字hellon(正常模式)	#查找下一个 1.3.4、行号
+**#文件的行号****:set nu(命令模式)	#设置行号****:set nonu(命令模式)	#取消行号** 1.3.5、行首/行末
+#跳转到最末行G(正常模式)#跳转到最首行gg(正常模式) 1.3.6、撤销
+#撤销u(正常模式) 1.3.7、将光标移到第n行
+#将光标移到第10行#1、显示行号 :set nu (命令模式)#2、输入10	（正常模式）#3、输入shift&#43;g	（正常模式） 1."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://huangzhifeng1.github.io/posts/linux%CA%BC%C7%A3/" /><link rel="prev" href="https://huangzhifeng1.github.io/posts/nginx%CA%BC%C7%A3/" /><link rel="next" href="https://huangzhifeng1.github.io/posts/git%CA%BC%C7%A3/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Linux笔记（李捷禧）",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/huangzhifeng1.github.io\/posts\/linux%CA%BC%C7%A3\/"
+        },"genre": "posts","wordcount":  376 ,
+        "url": "https:\/\/huangzhifeng1.github.io\/posts\/linux%CA%BC%C7%A3\/","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "李捷禧"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My New Hugo Site">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My New Hugo Site">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Linux笔记（李捷禧）</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>李捷禧</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;376 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1vi-和-vim编辑器">1、vi 和 vim编辑器</a>
+      <ul>
+        <li><a href="#11简介">1.1、简介</a></li>
+        <li><a href="#12vi和vim常用的三种模式">1.2、vi和vim常用的三种模式</a></li>
+        <li><a href="#13vi和vim快捷键">1.3、vi和vim快捷键</a></li>
+      </ul>
+    </li>
+    <li><a href="#14-文件目录类">1.4 文件目录类</a></li>
+    <li><a href="#15时间日期类">1.5、时间日期类</a></li>
+    <li><a href="#16搜索查找类"><strong>1.6、搜索查找类</strong></a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="1vi-和-vim编辑器">1、vi 和 vim编辑器</h2>
+<h3 id="11简介">1.1、简介</h3>
+<p>所有的Linux系统都会内建vi文本编辑器。</p>
+<p>vim具有程序编辑的能力，可以看做是vi的增强版本，可以主动的以字体颜色辨别语法的正确性，方便程序设计。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。</p>
+<h3 id="12vi和vim常用的三种模式">1.2、vi和vim常用的三种模式</h3>
+<p><strong>1.2.1、正常模式</strong>
+以vim打开一个档案就直接进入一般模式了（这是默认的模式）。在这个模式种，你可以使用【上下左右】按键移动光标，你可以使用【删除字符】或【删除整行】来处理档案内容，也可以使用【复制、贴上】来处理你的文件数据。（在正常模式下，我们可以使用快捷键。）</p>
+<p><strong>1.2.2、插入模式/编辑模式</strong>
+在这个模式下，程序员可以输入内容。</p>
+<p>按下【i,I,o,O,a,A,r,R】等任何一个字母之后才会进入编辑模式，一般来说按i即可。</p>
+<p><strong>1.2.3、命令行模式</strong>
+在这个模式种，可以提供你相关指令，完成读取、存盘、替换、离开vim、显示行号等的动作则是在此模式中达成的。</p>
+<p><strong>1.2.4、在vi和vim模式下的命令</strong></p>
+<pre tabindex="0"><code>i		#进入输入模式
+a		#进入输入模式 光标前进一位
+ESC		#退出输入模式
+wq		#保存并退出
+q		#退出
+q!		#强制退出
+</code></pre><h3 id="13vi和vim快捷键">1.3、vi和vim快捷键</h3>
+<p><strong>1.3.1、复制</strong></p>
+<pre tabindex="0"><code>#复制
+yy(正常模式)			#拷贝当前行   
+p(正常模式)			#粘贴
+5yy(正常模式)			#拷贝当前行向下5行
+</code></pre><p><strong>1.3.2、删除</strong></p>
+<pre tabindex="0"><code>#删除
+dd(正常模式)			#删除一行
+5dd(正常模式)			#删除当前行向下的5行
+</code></pre><p><strong>1.3.3、查找</strong></p>
+<pre tabindex="0"><code>#查找
+/hello + 回车(正常模式)   #查找关键字hello
+n(正常模式)			#查找下一个
+</code></pre><p><strong>1.3.4、行号</strong></p>
+<pre tabindex="0"><code>**#文件的行号**
+**:set nu(命令模式)		#设置行号**
+**:set nonu(命令模式)	#取消行号**
+</code></pre><p><strong>1.3.5、行首/行末</strong></p>
+<pre tabindex="0"><code>#跳转到最末行
+G(正常模式)
+#跳转到最首行
+gg(正常模式)
+</code></pre><p><strong>1.3.6、撤销</strong></p>
+<pre tabindex="0"><code>#撤销
+u(正常模式)
+</code></pre><p><strong>1.3.7、将光标移到第n行</strong></p>
+<pre tabindex="0"><code>#将光标移到第10行
+#1、显示行号   :set nu  (命令模式)
+#2、输入10	（正常模式）
+#3、输入shift+g	（正常模式）
+</code></pre><h2 id="14-文件目录类">1.4 文件目录类</h2>
+<p><strong>1.4.1、pwd</strong></p>
+<pre tabindex="0"><code>pwd		#显示当前工作目录的绝对路径
+</code></pre><p><strong>1.4.2、ls</strong></p>
+<pre tabindex="0"><code>ls [选择] [目录或是文件]	#显示当前目录下的目录和文件
+#-a 显示当前目录所有的文件和目录，包括影藏的
+#-l 以列表的方式显示信息
+#-h 显示更人性化
+</code></pre><p><strong>1.4.3、cd</strong></p>
+<pre tabindex="0"><code>cd [参数]   #切换到指定目录
+cd ~ 或者 cd   #回到自己的家目录
+cd ..   #回到上一级目录
+</code></pre><p><strong>1.4.4、mkdir</strong></p>
+<pre tabindex="0"><code>mkdir [选项] 要创建的目录   #用于创建目录
+-p 创建多级目录
+rmdir 目录  #删除指定目录  这个命令只能删除空的目录
+rm -rf 目录  #删除指定目录包括目录下的所有文件和目录
+</code></pre><p><strong>1.4.5、touch</strong></p>
+<pre tabindex="0"><code>touch 文件名称  #创建一个空文件
+</code></pre><p><strong>1.4.6、cp</strong></p>
+<pre tabindex="0"><code>cp [选项] source dest  #拷贝  source是源文件  dest是目标路径
+#-r 递归复制整个文件夹
+#\cp -r sorce dest   强制覆盖，不要提示我
+</code></pre><p><strong>1.4.7、rm</strong></p>
+<pre tabindex="0"><code>rm  #移除
+#-r 递归删除整个文件夹
+#-f 强制删除不提示
+</code></pre><p><strong>1.4.8、mv</strong></p>
+<pre tabindex="0"><code>mv #移动文件与目录或者是重命名
+#mv oldNameFile newNameFile (重命名)
+#mv /temp/movefile  /targetFolder  (移动)
+</code></pre><p><strong>1.4.9、cat</strong></p>
+<pre tabindex="0"><code>cat [选项] 文件 #查看文件内容
+#-n  显示行号
+</code></pre><p><strong>1.4.10、more</strong></p>
+<pre tabindex="0"><code>more 文件   #查看文件内容
+</code></pre><p><strong>1.4.11、&gt; &amp; &raquo;</strong></p>
+<blockquote>
+<pre tabindex="0"><code>&gt;   #输出重定向  （覆盖写）
+&gt;
+&gt;   &gt; 				#追加
+
+ls -l&gt;文件    #列表的内容写入文件a.txt中（覆盖写）
+ls -al&gt;&gt;文件	#列表的内容追加到文件aa.txt的末尾
+cat 文件1&gt;文件2		#将文件1的内容覆盖到文件2  cat /etc/profile &gt; c.txt
+echo &#34;内容&#34;&gt;&gt;文件  	#将内容写入文件中 
+
+#使用
+#1、将/home目录下的文件列表写入到/home/1.txt中
+ls -al&gt;&gt;/home/1.txt
+#2、将当前日历信息追加到/home/mycal文件中
+cal &gt;&gt; /home/mycal
+</code></pre></blockquote>
+<p><strong>1.4.12 echo</strong></p>
+<pre tabindex="0"><code>echo [选择] [输出内容]  #输出内容到控制台
+#经常使用echo指令输出环境变量   echo $PATH
+</code></pre><p><strong>1.4.13、head</strong></p>
+<pre tabindex="0"><code>head   #显示文件的开头部分内容，默认情况下head指令显示文件的前10行内容
+head 文件   #查看文件头10行内容
+head -n 5 文件   #查看文件头5行内容，5可以是任意行数
+</code></pre><p><strong>1.4.14、tail</strong></p>
+<pre tabindex="0"><code>tail  #显示文件中尾部的内容，默认情况下tail指令显示文件的后10行内容
+tail 文件   #查看文件后10行内容
+tail -n 5 文件   #查看文件后5行内容，5可以是任意行数
+tail -f 文件		#实时追踪该文档的所有更新，工作中经常使用，如实时监控日志文件
+</code></pre><p><strong>1.4.15、ln</strong></p>
+<pre tabindex="0"><code>#软链接指令  类似于windows里的快捷方式，主要存放了链接其他文件的路径
+ln -s [源文件或目录] [软链接名]    #给源文件创建一个软链接（相当于给源文件创建了一个快捷方式）
+rm -rf [软链接名]   #删除软链接  在删除软链接目录时，后面不要带/，否则提示资源忙
+</code></pre><p><strong>1.4.16、history</strong></p>
+<pre tabindex="0"><code>history   #查看已经执行过的历史命令，也可以执行历史指令
+history 10   #查看最近使用的10个命令  10这个数字可以改变
+！指令编号    #执行第多少条指令   ！178 执行编号为178的指令
+</code></pre><h2 id="15时间日期类">1.5、时间日期类</h2>
+<p><strong>1.5.1、date</strong></p>
+<pre tabindex="0"><code>date		#显示当前时间
+date +%Y 	#显示当前年份
+date +%m		#显示当前月份
+date +%d		#显示当前是哪一天
+date &#34;+%Y-%m-%d %H:%M:%S&#34;	#显示年月日时分秒
+date -s 字符串时间  #设置系统当前时间  date -s &#34;2019-06-19 10:03:00&#34;
+</code></pre><p><strong>1.5.2、cal</strong></p>
+<pre tabindex="0"><code>cal		#查看当前日历
+cal [选项]   #显示选择的年份的所有日历  cal 2019
+</code></pre><h2 id="16搜索查找类"><strong>1.6、搜索查找类</strong></h2>
+<p><strong>1.6.1、find</strong></p>
+<pre tabindex="0"><code>#find指令  将从指定目录向下递归的遍历其各个子目录，将满足条件的文件或者目录显示在终端
+find [搜索范围] [选项]
+#选项说明
+#-name &lt;查询方式&gt;   按照指定的文件名查找模式查找文件
+#-user &lt;用户名&gt;		查找属于指定用户名所有文件
+#-size &lt;文件大小&gt;   按照指定的文件大小查找文件
+
+#按文件名，根据名称查找/home目录下的hello.txt文件
+find /home -name hello.txt
+#按拥有者，查找/opt目录下，用户名称为root的文件
+find /opt -user root
+#查找整个linux系统下大于20M的文件（+n 大于    -n 小于    n 等于）
+find / -size +20M
+#查询根目录下，所有后缀为.txt的文件
+find / -name *.txt
+</code></pre><p><strong>1.6.2、locate</strong></p>
+<pre tabindex="0"><code>#locate指令  可以快速定位文件路径。locate指令利用事先建立的系统中所有文件名称及路径的locate数据库实现快速定位给定的文件。locate指令无需遍历整个文件系统，查询速度较快。为了保证查询结果的准确度，管理员必须顶起更新locate时刻。
+locate 搜索文件
+#由于locate指令基于数据库进行查询，所以第一次运行前。必须使用updatedb指令创建locate数据库
+
+#使用locate指令快速定位hello.txt文件所在目录
+updatedb
+locate hello.txt
+</code></pre><p><strong>1.6.3、grep &amp; 管道符号</strong></p>
+<pre tabindex="0"><code>#grep过滤查找
+#管道符 &#34;|&#34; ,表示将前一个命令的处理结果，输出传递给后面的命令处理。
+
+grep [选项] 查找内容 源文件
+
+#选项
+
+-n		显示匹配行及行号
+
+-i		忽略字母大小写
+
+#应用实例 ： 请在hello.txt文件中，查找 &#34;yes&#34; 所在行，并且显示行号
+cat hello.txt | grep -ni yes
+#cat hello.txt  将hello.txt的内容浏览出来
+</code></pre></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 0001-01-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://huangzhifeng1.github.io/posts/linux%CA%BC%C7%A3/" data-title="Linux笔记（李捷禧）"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://huangzhifeng1.github.io/posts/linux%CA%BC%C7%A3/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://huangzhifeng1.github.io/posts/linux%CA%BC%C7%A3/" data-title="Linux笔记（李捷禧）"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://huangzhifeng1.github.io/posts/linux%CA%BC%C7%A3/" data-title="Linux笔记（李捷禧）"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://huangzhifeng1.github.io/posts/linux%CA%BC%C7%A3/" data-title="Linux笔记（李捷禧）"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/nginx%CA%BC%C7%A3/" class="prev" rel="prev" title="nginx笔记（李捷禧）"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>nginx笔记（李捷禧）</a>
+            <a href="/posts/git%CA%BC%C7%A3/" class="next" rel="next" title="Git笔记（李捷禧）">Git笔记（李捷禧）<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.107.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">李捷禧</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
